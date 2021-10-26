@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs–– -->
+  <meta charset="utf-8">
+  <title>Your Project Title</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/customize.css">
+  <style>
+  #map_1,#map_2,#map_3 {
+    height: 500px;
+  }
+  </style>
+
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <div class="container one-bottom" style="margin-top: 50px">
+    <div class="ten columns">
+      <h2>Connective Environments, Fall 2021</h2>
+      <p>
+        ARCH4050/6306: Tuesdays 2pm-5:15pm
+        <br>
+        Dr. Dimitris Papanikolaou | dpapanik@uncc.edu | Urban Synergetics Lab | https://urbansynergeticslab.net
+      </p>
+    </div>
+    <div class="two columns">
+      <a href="https://urbansynergeticslab.net/"><img class="scale-with-grid" src="img/LabLogo_dark_cropped.png"></a>
+    </div>
+  </div>
+
+  <div class="container one-bottom">
+    <div>
+      <h3>TOUCHING AIR</h3>
+      <h5>DIARY ENTRIES</h5>
+    </div>
+  </div>
+
+  <div class="container one-bottom">
+    <div class="two columns">
+      <h5>10.26</h5>
+    </div>
+    <div class="eight columns">
+      <p align="justify">Moving forward with our project from our initial proposal on 10.19, we had a few more clarifications that needed to be addressed before we could begin to move forward with our project.<br>WHAT MAKES THE CHANGE <br> HOW DO WE WANT TO OCCUPY SPACE <br>And the more academic persuit of this course, what does it add to the field of inflatables <br> and the most important part of every project, that can be changed at any time but we would like to get off at the right foot, a name for the project. It should touch on most if not all of the parts of a project. Our project can be summarized in a series of key words, COVID, AIR, BREATH, DISCONNECTION, SUFFOCATINGS. As we move forward, we are currently satisfied by TOUCHING AIR, feeling that it convays the proper emotions that drive our project. For our own amusement and for the record some other options were covid spaces, connected breathing, unstable air, unstable spaces, squeezing air, squeezing enclosures, suffocating air, suffocating spaces and suffocating existence.<br><br>WHAT MAKES THE CHANGE<br>From our investigation(?) we saw 3 possible options to make the space change. TIMED RELAY. The advantages to using this kind of change, is it's predicatable and allows someone to use the space without direct or indirect participants. Negatives of this kind of change is that it's predicatable and we're not 100% sure that its still possible to call it an interface, since what people do has no impact to how the space changes. DIRECT USER INTERACTION. Advantages of this kind of change, is it lets the user understand how the space is changing. But we wonder if it will add to a sense of comradery between primary and secondary users. INDIRECT USER INTERACTION. Advantages of this is that it adds mystetry to how the space changes, it isolates the user from the actions that influence the space they occupy. Disadvantages to this kind of interaction is that the space won't react the same every time and the primary user isn't guaranteed a dynamic space of isolation and agoraphobia<br><br>HOW DO WE WANT TO OCCUPY SPACE<br>Depending which design we design to move forward with, there are two possibilties to continue with, either within an enclosed space or an open space. We could inflate the space within an enclosed space, which could allow for a more private experience, with the secondary user outside of the space. This could also possibly lower the risk of blow out as we processed into fabrication and testing. This could also remove the need for an enclosing inflatable if we decide to continue with several volumes within a single volume, the fixed enclosure acting as the single volume. If we continue to design with an open space in mind, this opens up the possibilities of spaces we could occupy throughout Storrs, through the primary location is the Saloon, and the rest of the university. If open the inflatable becomes a spectacle to be observed, it changes from an experience from individual to collective. Both are conducive to the Covid experience, since we expereinced Covid as individuals and as a collective. With "clear" polyethylene material, it still obstructs the views from both inside and outside.</p>
+      <p>A problem that has been nagging the back of the old noggin' is how does this project contribute to the research field of inflatables? This project was sparked by an emotion, and it feels unfair to replace that passion with rational ideas with the intent to contribute something to scientific reseach. Art exhibits still have the ability to contribute to science without removing itself from the passion that started and drove a project </p>
+    </div>
+    <div>
+      <div class="three columns">
+        <p>sketch iterations</p>
+      </div>
+      <div class="three columns">
+        <img class="scale-with-grid" src="img/sketch_2.png">
+      </div>
+      <div class="three columns">
+        <img class="scale-with-grid" src="img/sketch_3.png">
+      </div>
+      <div class="three columns">
+        <img class="scale-with-grid" src="img/sketch_4.png">
+      </div>
+      <div class="three columns">
+        <img class="scale-with-grid" src="img/sketch_5.png">
+      </div>
+      <div class="three columns">
+        <img class="scale-with-grid" src="img/sketch_6.png">
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+  L.mapbox.accessToken = 'pk.eyJ1IjoiZGltcCIsImEiOiJkRnlra3RjIn0.E9CTYzNUEx0yb3dcfV4SiA';
+
+  var map_1 = L.mapbox.map('map_1')
+  .setView([40, -74.50], 9)
+  .addLayer(L.mapbox.styleLayer('mapbox://styles/dimp/citf6n01300692hmlxnnrv6wd'));
+  map_1
+  .scrollWheelZoom.disable();
+
+
+  d3.json("https://api.citybik.es/v2/networks/ford-gobike", function(data) {
+    console.log(data);
+
+    var map_2 = L.mapbox.map('map_2')
+    .setView([data.network.location.latitude, data.network.location.longitude], 10)
+    .addLayer(L.mapbox.styleLayer('mapbox://styles/dimp/citf6n01300692hmlxnnrv6wd'));
+    map_2
+    .scrollWheelZoom.disable();
+
+    data.network.stations.forEach(function(station){
+      station.lat = +station.latitude;
+      station.lng = +station.longitude;
+      var path_options = {
+        radius :  2,
+        color : d3.rgb(88,206,227).brighter(),
+        stroke: true,
+        weight : 1,
+      };
+      L.circleMarker([station.latitude, station.longitude], path_options).addTo(map_2);
+    });
+
+    var map_3 = L.mapbox.map('map_3')
+    .setView([data.network.location.latitude, data.network.location.longitude], 11)
+    .addLayer(L.mapbox.styleLayer('mapbox://styles/dimp/ck9mf0x8q3o521iojo2qmmp52'));
+    map_3
+    .scrollWheelZoom.disable();
+
+    data.network.stations.forEach(function(station){
+      station.lat = +station.latitude;
+      station.lng = +station.longitude;
+      var inventory_level = station.free_bikes / (station.free_bikes+station.empty_slots);
+      var path_options = {
+        radius :  0.14 * (station.free_bikes + station.empty_slots),
+        color : d3.rgb(88,206,227).brighter(),
+        fillColor : (function(){
+          return inventory_level > 0.5? d3.rgb(88,206,227) : d3.rgb(88,206,227).darker(2)
+        })(),
+        stroke: true,
+        weight : 1,
+        opacity : 1,
+        fillOpacity : 0.8
+      };
+      L.circleMarker([station.latitude, station.longitude], path_options).addTo(map_3);
+    });
+  });
+
+
+
+
+  </script>
+
+
+</body>
+</html>
